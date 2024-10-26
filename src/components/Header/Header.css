@@ -13,9 +13,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap :1.5vw;
+    gap: 1.5vw;
     max-width: 50%;
-    bottom : 10%;
+    bottom: 10%;
     left: 6vw;
     animation: fakeIn 3s;
     margin-bottom: 25px;

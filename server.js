@@ -1,8 +1,8 @@
 import express from "express"
 import cors from "cors"
 import bodyParser from "body-parser"
-import userRouter from "./routes/userRoute"
 import {connectDB} from "./config/db.js";
+import foodRouter from "./routes/foodRoute.js";
 
 // app config
 const app = express()
@@ -11,10 +11,12 @@ const port = 3000
 // middleware
 app.use(express.json())
 app.use(cors())
-app.use("/api/user",userRouter)
 
 // connect db
-connectDB();
+connectDB()
+
+// call API
+app.use("/api/food", foodRouter)
 
 app.get("/",(req,res)=>{
     res.send("Hello World")

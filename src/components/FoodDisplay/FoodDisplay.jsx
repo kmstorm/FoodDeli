@@ -10,7 +10,7 @@ const FoodDisplay = ({category}) => {
           <h2>Top dishes near you</h2>
           <div className="food-display-list">
               {food_list.map((item,index) => (
-                <FoodItem key={index} id={item.id} name={item.name} price={item.price} description={item.description} image={item.image} />
+                <FoodItem key={index} id={item._id} name={item.name} price={item.price} description={item.description} image={item.image} />
               ))}
           </div>
     </div>

@@ -1,7 +1,8 @@
 import express from "express"
 import cors from "cors"
 import bodyParser from "body-parser"
-import userRouter from "./routes/userRoute"
+import userRouter from "./routes/userRoute.js"
+import 'dotenv/config'
 import {connectDB} from "./config/db.js";
 
 // app config

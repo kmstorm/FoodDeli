@@ -21,14 +21,38 @@
 
 .explore-menu-list {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     gap: 30px;
-    overflow: scroll;
+    max-width: 100;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0 20px;
 }
 
 .explore-menu-list::-webkit-scrollbar {
-    display: none;
+    height: 10px;
+}
+
+.explore-menu-list::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+.explore-menu-list::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+.explore-menu-list::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+.explore-menu-list-item {
+    margin: 5px 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 7.5vw;
 }
 
 .explore-menu-list-item img{
@@ -42,7 +66,7 @@
 .explore-menu-list-item p{
     color: #747474;
     margin-top: 10px;
-    font-size: max(1.4vw, 16px);
+    font-size: max(1.6vw, 16px);
     cursor: pointer;
 }
 
@@ -61,3 +85,40 @@
     color: white;
 }
 
+/* Phần responsive cho màn hình điện thoại */
+@media (max-width: 600px) {
+    .explore {
+        gap: 10px;
+        margin-bottom: -5%;
+    }
+
+    .explore h1 {
+        font-size: 30px;
+    }
+
+    .explore-menu-text {
+        font-size: 16px;
+    }
+
+    .explore-menu-list {
+        gap: 20px;
+        padding: 0 10px;
+    }
+
+    .explore-menu-list::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .explore-menu-list-item img{
+        width: 10vw;
+        min-width: 60px;
+    }
+
+    .explore-menu-list-item p{
+        font-size: max(1.2vw, 14px);
+    }
+
+    .explore hr {
+        margin: 60px 0px;
+    }
+}

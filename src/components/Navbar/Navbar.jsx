@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './Navbar.css'
 import {assets} from '../../assets/assets'
 export const Navbar = () => {
-    const [menu, setMenu] = useState("Home") //khởi tạo biến trạng thái menu và hàm để cập nhật trạng thái là setMenu; mặc định là Home
+    const [menu, setMenu] = useState("Home")
   return (
     <div className="navbar">
         <img src={assets.logo} alt="" />

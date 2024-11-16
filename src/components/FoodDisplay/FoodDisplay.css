@@ -1,5 +1,5 @@
 .food-display {
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 .food-display h2 {
@@ -15,4 +15,11 @@
     gap: 20px;
     margin-top: 30px;
     row-gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .food-display h2 {
+        margin-left: 0;
+        text-align: center;
+    }
 }

@@ -5,6 +5,7 @@
   box-sizing: border-box;
   font-family: 'Outfit';
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 html,

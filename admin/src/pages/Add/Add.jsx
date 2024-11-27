@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
 import './Add.css'
 import { assets } from '../../assets/assets'
+import axios from 'axios'
+import { toast } from 'react-toastify'
 
 const Add = () => {
 
+    const url = "http://localhost:3000";
     const [image,setImage] = useState(false);
     const [data,setData] = useState({
         name:"",
@@ -19,7 +22,27 @@ const Add = () => {
     }
 
     const onSubmitHandler = async (event) => {
-        
+        event.preventDefault();
+        const formData = new FormData();
+        formData.append("name",data.name)
+        formData.append("description",data.description)
+        formData.append("price",Number(data.price))
+        formData.append("category",data.catagory)
+        formData.append("image",image)
+        const respone = await axios.post(`${url}/api/food/add`,formData);
+        if (respone.data.success) {
+            setData({
+                name:"",
+                desription:"",
+                price:"",
+                category:"Salad"
+            })
+            setImage(false)
+            toast.success(respone.data.message)
+        }
+        else {
+            toast.error(respone.data.message)
+        }
     }
 
   return (

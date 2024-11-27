@@ -1,7 +1,7 @@
 # Dự án Frontend - FoodDeli
 
 ## Giới thiệu
-Dự án FoodDeli là một ứng dụng web được xây dựng bằng React và Vite, cung cấp một giao diện người dùng thân thiện để đặt hàng thực phẩm trực tuyến.
+Dự án FoodDeli là một ứng dụng web được xây dựng bằng React và Vite, cung cấp một giao diện người dùng thân thiện để đặt hàng thực phẩm trực tuyến. 
 ## Công nghệ sử dụng
 - **React**: Thư viện JavaScript phổ biến để xây dựng giao diện người dùng.
 - **Vite**: Công cụ xây dựng nhanh chóng cho các ứng dụng web, giúp cải thiện hiệu suất phát triển.

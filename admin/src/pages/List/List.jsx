@@ -3,9 +3,8 @@ import './List.css'
 import axios from "axios"
 import { toast } from 'react-toastify'
 
-const List = () => {
+const List = ({url}) => {
 
-  const url = "http://localhost:3000"
   const [list,setList] = useState([]);
 
   const fetchList = async () => {
@@ -50,7 +49,7 @@ useEffect(()=>{
             <div key={index} className='list-table-format'>
               <img src={`${url}/images/`+item.image} alt="" />
               <p>{item.name}</p>
-              <p>{item.category}</p>
+              <p>{item.category || "N/A"}</p> {/* Hiển thị N/A nếu thiếu category */}
               <p>${item.price}</p>
               <p onClick={()=>removeFood(item._id)} className='cursor'>X</p>
             </div>

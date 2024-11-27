@@ -1,4 +1,4 @@
-import cloudinary from 'cloudinary';
+import cloudinary from 'Backend/config/cloudinary.js';
 import dotenv from 'dotenv';
 
 dotenv.config();

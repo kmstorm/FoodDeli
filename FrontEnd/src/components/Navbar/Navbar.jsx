@@ -18,15 +18,20 @@ export const Navbar = ({ setShowLogin }) => {
         setToken("")
         navigate("/")
     }
-
+    const scrollToSection = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
   return (
     <div className="navbar">
         <Link to="/"><img src={assets.logo} alt="" /></Link> 
         <ul className="navbar-menu">
-            <Link to="/" onClick={() => setMenu("Home")} className={menu==="Home"?"active":""}>Home</Link>
-            <Link to="#explore" onClick={() => setMenu("Menu")} className={menu==="Menu"?"active":""}>Menu</Link>
-            <Link to="#app-download" onClick={() => setMenu("Mobile-app")} className={menu==="Mobile-app"?"active":""}>Mobile-app</Link>
-            <Link to="#footer" onClick={() => setMenu("Contact-us")} className={menu==="Contact-us"?"active":""}>Contact Us</Link>
+            <Link to="/" onClick={() => { setMenu("Home"); scrollToSection("home"); }} className={menu==="Home"?"active":""}>Home</Link>
+            <Link to="#explore" onClick={() => { setMenu("Menu"); scrollToSection("explore"); }} className={menu==="Menu"?"active":""}>Menu</Link>
+            <Link to="#app-download" onClick={() => { setMenu("Mobile-app"); scrollToSection("app-download"); }} className={menu==="Mobile-app"?"active":""}>Mobile-app</Link>
+            <Link to="#footer" onClick={() => { setMenu("Contact-us"); scrollToSection("footer"); }} className={menu==="Contact-us"?"active":""}>Contact Us</Link>
         </ul>
         <div className="navbar-right">
             <img src={assets.search_icon} alt="" />

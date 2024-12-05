@@ -5,6 +5,7 @@ import bodyParser from "body-parser"
 import userRouter from "./routes/userRoute.js"
 import {connectDB} from "./config/db.js";
 import foodRouter from "./routes/foodRoute.js";
+import orderRouter from "./routes/orderRoute.js"
 
 // app config
 const app = express()
@@ -21,6 +22,7 @@ connectDB()
 app.use("/api/food", foodRouter)
 app.use("/api/user",userRouter)
 app.use("/images",express.static('uploads'))
+app.use("/api/order",orderRouter)
 
 app.get("/",(req,res)=>{
     res.send("Hello World")

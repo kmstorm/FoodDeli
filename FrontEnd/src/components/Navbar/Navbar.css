@@ -75,7 +75,6 @@
     display: none;
     right: 0;
     z-index: 1;
-
 }
 .navbar-profile:hover .navbar-profile-dropdown {
     display: flex;
@@ -88,16 +87,18 @@
     outline: 2px solid white;
     list-style: none;
 }
+
 .navbar-profile-dropdown li {
     display: flex;
     align-items: center;
     gap: 10px;
     cursor: pointer;
-
 }
+
 .navbar-profile-dropdown li img {
     width: 20px;
 }
+
 .navbar-profile-dropdown li:hover {
     color: tomato;
 }

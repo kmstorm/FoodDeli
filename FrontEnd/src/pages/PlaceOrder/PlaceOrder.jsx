@@ -26,7 +26,7 @@ export const PlaceOrder = () => {
     setData({...data, [name]: value})
   }
 
-  const onPlaceOrder = async (event) => {
+  const placeOrder = async (event) => {
     event.preventDefault();
     let orderItems = [];
     food_list.map((item) => {
@@ -36,6 +36,7 @@ export const PlaceOrder = () => {
         orderItems.push(itemInfo);
       }
     })
+    console.log(orderItems);
     let orderData = {
       address: data,
       items: orderItems,
@@ -68,7 +69,7 @@ export const PlaceOrder = () => {
 
   return (
     <div>
-      <form className='place-order'>
+      <form onSubmit={placeOrder} className='place-order'>
         <div className="place-order-left">
           <p className="title">Delivery Information</p>
           <div className="multi-fields">
@@ -106,7 +107,7 @@ export const PlaceOrder = () => {
               <b>${getTotalCartAmount() + 2}</b>
             </div>
           </div>
-            <button >PROCESS TO PAYMENT</button>
+            <button type="submit" onClick={placeOrder} >PROCESS TO PAYMENT</button>
         </div>
         </div>
       </form>

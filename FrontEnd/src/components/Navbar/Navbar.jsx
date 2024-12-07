@@ -42,15 +42,20 @@ export const Navbar = ({ setShowLogin }) => {
             </div> 
             {!token ? <button onClick={() => setShowLogin(true)}>Sign Up</button> :
                 <div className="navbar-profile">
-                      <img src={assets.profile_icon} alt="" />
-                      <ul className="nav-profile-dropdown">
-                          <li onClick={()=>navigate('/myorders')}><img src={assets.bag_icon} alt="" /><p>Orders</p></li>
-                          <hr />
-                          <li onClick={logout}><img src={assets.logout_icon} alt="" /><p>Logout</p></li>
-                      </ul>
+                    <img src={assets.profile_icon} alt="Profile Icon" />
+                    <ul className="navbar-profile-dropdown">
+                        <li onClick={() => navigate('/myorders')}>
+                            <img src={assets.bag_icon} alt="Orders Icon" />
+                            <p>Orders</p>
+                        </li>
+                        <hr />
+                        <li onClick={logout}>
+                            <img src={assets.logout_icon} alt="Logout Icon" />
+                            <p>Logout</p>
+                        </li>
+                    </ul>
                 </div>
-            }
-            
+            } 
         </div>
     </div>
   )

@@ -4,13 +4,14 @@
   margin: 0%;
   box-sizing: border-box;
   font-family: 'Outfit';
-  overflow-x: hidden;
-  scroll-behavior: smooth;
+  
 }
 
 html,
 body {
   min-height: 100vh;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 a {

@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "vnpay": "^1.6.0"
+  }
+}

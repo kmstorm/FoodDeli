@@ -1,0 +1,130 @@
+/* Phần bình thường */
+.header {
+    height: 32vw;
+    margin: 30px 200px;
+    background: url('../../../header_img.png') no-repeat;
+    background-size: contain;
+    position: relative;
+    padding: 20px;
+}
+
+.header-contents {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vw;
+    max-width: 50%;
+    bottom: 10%;
+    left: 6vw;
+    animation: fakeIn 3s;
+    margin-bottom: 25px;
+}
+
+.header-contents h2 {
+    font-size: max(3vw, 50px);
+    font-weight: 500;
+    color: #fff;
+}
+
+.header-contents p {
+    font-size: max(1.4vw, 12px);
+    font-weight: 400;
+    color: #fff;
+}
+
+.header-contents button {
+    padding: 10px 15px;
+    background: white;
+    border: none;
+    border-radius: 50px;
+    font-size: max(1.5vw, 14px);
+    font-weight: 500;
+    color: #747474;
+    margin: 10px;
+    margin-left: -65%;
+}
+
+/* Phần responsive */
+@media (max-width:1050px) {
+    .header-contents h2 {
+        font-size: 5vw;
+    }
+    .header-contents p {
+        font-size: 1.6vw;
+    }
+    .header-contents button {
+        font-size: 1.7vw;
+    }
+}
+
+@media (max-width:900px) {
+    .header {
+        background-size: 100%;
+        margin: 30px 115px;
+        margin-left: 12%;
+    }
+    .header-contents h2 {
+        font-size: 4.5vw;
+    }
+    .header-contents p {
+        display: none;
+    }
+    .header-contents button {
+        font-size: 1.7vw;
+    }
+}
+
+@media (max-width:750px) {
+    .header {
+        background-size: 100%;
+        
+    }
+    .header-contents {
+        max-width: 90%;
+        gap: 2vw;
+        margin: 10px;
+    }
+    .header-contents h2 {
+        font-size: 6vw;
+    }
+    .header-contents p {
+        font-size: 2vw;
+    }
+    .header-contents button {
+        font-size: 2.2vw;
+    }
+    /* Ẩn đi nội dung không cần thiết trên màn hình nhỏ */
+    .header-contents p {
+        display: none;
+    }
+}
+
+@media (max-width:600px) {
+    .header {
+        background-size: 100%;
+    }
+    .header-contents {
+        max-width: 90%;
+        gap: 2vw;
+    }
+    .header-contents h2 {
+        font-size: 5vw;
+    }
+    .header-contents button {
+        font-size: 2.5vw;
+    }
+    .header-contents p {
+        display: none;
+    }
+    .header{
+        margin: 10px 10px;
+    }
+}
+
+.header-contents button:hover {
+    cursor: pointer;
+    background: tomato;
+    color: white;
+}

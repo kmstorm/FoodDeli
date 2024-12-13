@@ -125,18 +125,12 @@ const verifyOrder = async (req, res) => {
 
 // Lấy danh sách đơn hàng của người dùng
 const userOrders = async (req, res) => {
-    const { userId } = req.body;
-
-    if (!userId) {
-        return res.status(400).json({ success: false, message: "User ID is required" });
-    }
-
     try {
-        const orders = await orderModel.find({ userId });
+        const orders = await orderModel.find({ userId:req.body.userId });
         res.json({ success: true, data: orders });
     } catch (error) {
-        console.error("Error fetching user orders:", error);
-        res.status(500).json({ success: false, message: "Error fetching user orders" });
+        console.log(error);
+        res.json({ success: false, message: "Error fetching user orders" });
     }
 };
 

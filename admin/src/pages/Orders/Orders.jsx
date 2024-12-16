@@ -20,6 +20,16 @@ const Orders = ({url}) => {
     }
   }
 
+  const statusHandler = async (event,orderId) => {
+    const respone = await axios.post(url+"/api/order/status",{
+      orderId,
+      status:event.target.value
+    })
+    if (respone.data.success) {
+      await fetchAllOrders();
+    }
+  }
+
   useEffect(()=>{
     fetchAllOrders();
   },[])
@@ -43,18 +53,18 @@ const Orders = ({url}) => {
                   }
                 })}
               </p>
-              <p className="order-item-address">
+              <div className="order-item-address">
                 <p>{order.address.street+","}</p>
                 <p>{order.address.city}</p>
-              </p>
+              </div>
             </div>
             <p>Item : {order.items.length}</p>
             <p>${order.amount}</p>
-            <seLect>
+            <select onChange={(event)=>statusHandler(event,order._id)} value={order.status}>
               <option value="Food Processing">Food Processing</option>
               <option value="Out for delivery">Out for delivery</option>
               <option value="Deliver">Deliver</option>
-            </seLect>
+            </select>
           </div>
           ))}
       </div>

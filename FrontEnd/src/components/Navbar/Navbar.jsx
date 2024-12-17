@@ -34,7 +34,7 @@ export const Navbar = ({ setShowLogin }) => {
             <Link to="#footer" onClick={() => { setMenu("Contact-us"); scrollToSection("footer"); }} className={menu==="Contact-us"?"active":""}>Contact Us</Link>
         </ul>
         <div className="navbar-right">
-            <img src={assets.search_icon} alt="" />
+            <img className="navbar-search" src={assets.search_icon} alt="" onClick={() => navigate('/search')} />
             <div className="navbar-search-icon">
                 <Link to="/cart">    <img src={assets.basket_icon} alt="" /> </Link>
                 <div className={getTotalCartAmount()=== 0 ? "":"dot"}>

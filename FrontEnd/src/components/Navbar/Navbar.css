@@ -57,7 +57,9 @@
 .navbar-search-icon {
     position: relative;
 }
-
+.navbar-search {
+    cursor: pointer;
+}
 .navbar-search-icon .dot {
     height: 10px;
     width: 10px;

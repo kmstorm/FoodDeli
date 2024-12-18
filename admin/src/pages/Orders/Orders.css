@@ -9,12 +9,12 @@
     font-size: 14px;
     color: #505050;
 }
-.order-item-food{
+.order-item-food, .order-item-name{
     font-weight: 600;
-    margin-bottom: 30px;
 }
-.order-item-address{
-    margin-bottom: 10px;
+.order-item-name{
+    margin-top: 30px;
+    margin-bottom: 5px;
 }
 .order-item select{
     background-color: #ffeBe4;

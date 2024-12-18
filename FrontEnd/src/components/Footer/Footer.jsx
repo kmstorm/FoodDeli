@@ -6,12 +6,12 @@ export const Footer = () => {
     <div className="footer" id="footer">
       <div className="footer-content">
             <div className="footer-content-left">
-                <img src={assets.logo} alt="Logo của Tomato.com" />
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <img className="footer-logo" src={assets.logo_icon} alt="Logo của Tomato.com" />
+                <p>We specialize in providing delicious and high-quality Vietnamese dishes, rich in traditional flavors. Let us bring the taste of Vietnam right to your doorstep!</p>
                 <div className="footer-social-icons">
-                    <img src={assets.facebook_icon} alt="Icon Facebook" />
-                    <img src={assets.twitter_icon} alt="Icon Twitter" />
-                    <img src={assets.linkedin_icon} alt="Icon LinkedIn" />
+                    <img href="https://facebook.com" src={assets.facebook_icon} alt="Icon Facebook" />
+                    <img href="https://twitter.com" src= {assets.twitter_icon} alt="Icon Twitter" />
+                    <img href="https://linkedin.com" src={assets.linkedin_icon} alt="Icon LinkedIn" />
                 </div>
             </div>
             <div className="footer-content-center">
@@ -32,7 +32,7 @@ export const Footer = () => {
             </div>
       </div>
       <hr /> 
-      <p className="footer-copyright"> Copyright 2024 © Tomato.com - All Rights Reserved. </p>
+      <p className="footer-copyright"> Copyright 2024 © Baoxu.com - All Rights Reserved. </p>
     </div>
   )
 }

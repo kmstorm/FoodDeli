@@ -25,34 +25,40 @@ const LoginPopup = ({ setShowLogin }) => {
         setData(prevData => ({ ...prevData, agreeTerms: !prevData.agreeTerms }))
     }
 
-    const onLogin = async (event) => { 
-        event.preventDefault();
+    const onLogin = async (event) => {
+    event.preventDefault();
 
-        if (!data.agreeTerms) {
-            setErrorMessage("You must agree to the terms of use & privacy policy.");
-            return;
-        }
-
-        let newUrl = url;
-        if (currentState === "Login") {
-            newUrl += "/api/user/login";
-        } else {
-            newUrl += "/api/user/register";
-        }
-
-        try {
-            const response = await axios.post(newUrl, data);
-            if (response.data.success) {
-                setToken(response.data.token)
-                localStorage.setItem("token", response.data.token)
-                setShowLogin(false)
-            } else {
-                setErrorMessage(response.data.message);
-            }
-        } catch (error) {
-            setErrorMessage("Something went wrong, please try again later.");
-        }
+    if (!data.agreeTerms) {
+        setErrorMessage("You must agree to the terms of use & privacy policy.");
+        return;
     }
+
+    let newUrl = url;
+    if (currentState === "Login") {
+        newUrl += "/api/user/login";
+    } else {
+        newUrl += "/api/user/register";
+    }
+
+    try {
+        const response = await axios.post(newUrl, data);
+        if (response.data.success) {
+            setToken(response.data.token);
+            localStorage.setItem("token", response.data.token);
+            setShowLogin(false);
+
+            // Kiểm tra nếu tài khoản là admin@admin.com và mật khẩu là admin
+            if (data.email === "admin@admin.com" && data.password === "admin123") {
+                // Chuyển hướng đến trang admin
+                window.location.href = "http://localhost:5173/"; // Thay đổi URL theo trang admin của bạn
+            }
+        } else {
+            setErrorMessage(response.data.message);
+        }
+    } catch (error) {
+        setErrorMessage("Something went wrong, please try again later.");
+    }
+};
 
     useEffect(() => {
         // Optional: Test connection on mount if needed

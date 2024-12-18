@@ -4,6 +4,15 @@ import { assets } from '../../assets/assets'
 import { NavLink } from 'react-router-dom'
 
 const Sidebar = () => {
+
+  const handleLogout = () => {
+    // Xóa token khỏi localStorage sau khi logout
+    localStorage.removeItem("token");
+
+    // Chuyển hướng đến trang khác (ví dụ: trang login)
+    window.location.href = "http://localhost:8097/";  // Đổi URL theo yêu cầu
+  };
+
   return (
     <div className='sidebar'>
         <div className='sidebar-options'>
@@ -19,9 +28,13 @@ const Sidebar = () => {
                 <img src={assets.order_icon} alt='' />
                 <p>Orders</p>
             </NavLink>
+            <div className='sidebar-option' onClick={handleLogout}>
+                <img src={assets.logout_icon} alt='' />
+                <p>Logout</p>
+            </div>
         </div>
     </div>
-  )
+  );
 }
 
-export default Sidebar
+export default Sidebar;

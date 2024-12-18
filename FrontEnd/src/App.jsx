@@ -8,6 +8,7 @@ import Footer from "./components/Footer/Footer.jsx"
 import LoginPopup from './components/LoginPopup/LoginPopup.jsx'
 import MyOrders from "./pages/MyOrders/MyOrders.jsx"
 import Verify from "./pages/Verify/Verify.jsx"
+import Search from "./pages/Search/Search.jsx"
 
 export const App = () => {
   const [showLogin, setShowLogin] = React.useState(false)
@@ -22,6 +23,7 @@ export const App = () => {
           <Route path="/order" element={<PlaceOrder />} />
           <Route path="/verify" element={<Verify />} />
           <Route path="/myorders" element={<MyOrders />} />
+          <Route path="/search" element={<Search />} />
         </Routes>
         <Footer />
       </div>

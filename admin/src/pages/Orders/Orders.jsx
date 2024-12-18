@@ -53,6 +53,7 @@ const Orders = ({url}) => {
                   }
                 })}
               </p>
+              <p className="order-item-name">{order.address.firstName+" "+order.address.lastName}</p>
               <div className="order-item-address">
                 <p>{order.address.street+","}</p>
                 <p>{order.address.city}</p>
@@ -63,7 +64,7 @@ const Orders = ({url}) => {
             <select onChange={(event)=>statusHandler(event,order._id)} value={order.status}>
               <option value="Food Processing">Food Processing</option>
               <option value="Out for delivery">Out for delivery</option>
-              <option value="Deliver">Deliver</option>
+              <option value="Delivered">Delivered</option>
             </select>
           </div>
           ))}

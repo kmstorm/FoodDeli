@@ -9,6 +9,7 @@ const List = ({url}) => {
 
   const fetchList = async () => {
     const respone = await axios.get(`${url}/api/food/list`);
+    console.log(respone.data);
     if (respone.data.success) {
       setList(respone.data.data);
   }
@@ -47,7 +48,7 @@ useEffect(()=>{
         {list.map((item,index)=>{
           return (
             <div key={index} className='list-table-format'>
-              <img src={`${url}/images/`+item.image} alt="" />
+              <img src={item.image} alt="" />
               <p>{item.name}</p>
               <p>{item.category || "N/A"}</p> {/* Hiển thị N/A nếu thiếu category */}
               <p>${item.price}</p>

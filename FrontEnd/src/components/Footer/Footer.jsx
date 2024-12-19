@@ -26,13 +26,13 @@ export const Footer = () => {
             <div className="footer-content-right">
               <h2>GET IN TOUCH</h2>
               <ul>
-                <li>000-000-000</li>
-                <li>xuxu@tomato.com</li>
+                <li>037-563-9568</li>
+                <li>Team3@soict.hust.edu.vn</li>
               </ul>
             </div>
       </div>
       <hr /> 
-      <p className="footer-copyright"> Copyright 2024 © Baoxu.com - All Rights Reserved. </p>
+      <p className="footer-copyright"> Copyright 2024 © BaoBaoBaoBach.com - All Rights Reserved. </p>
     </div>
   )
 }

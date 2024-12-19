@@ -59,9 +59,9 @@ export const Cart = () => {
               <div key={index} className='cart-items-title cart-items-item'>
               <img src={url+"/images/"+item.image} alt="" />
               <p>{item.name}</p>
-              <p>${item.price}</p>
+              <p>{item.price} VND</p>
               <p>{cartItems[item._id]}</p>
-              <p>${item.price * cartItems[item._id]}</p>
+              <p>{item.price * cartItems[item._id]} VND</p>
               <p className="Cross" onClick={() => removeFromCart(item._id)}>X</p>
               </div>
               <hr />
@@ -77,26 +77,26 @@ export const Cart = () => {
           <div>
             <div className="cart-total-details">
               <p>Subtotal</p>
-              <p>${getTotalCartAmount()}</p>
+              <p>{getTotalCartAmount()} VND</p>
             </div>
             <hr />
             <div className="cart-total-details">
               <p>Delivery Fee</p>
-              <p>${getTotalCartAmount() > 0 ? 15000 : 0}</p>
+              <p>{getTotalCartAmount() > 0 ? 15000 : 0} VND</p>
             </div>
             {discount > 0 && (
               <>
                 <hr />
                 <div className="cart-total-details">
                   <p>Discount</p>
-                  <p>-${discount}</p>
+                  <p>-{discount} VND</p>
                 </div>
               </>
             )}
             <hr />
             <div className="cart-total-details">
               <b>Total</b>
-              <b>${totalAfterDiscount > 0 ? totalAfterDiscount : 0}</b>
+              <b>{totalAfterDiscount > 0 ? totalAfterDiscount : 0} VND</b>
             </div>
           </div>
           <button onClick={() => navigate("/order",{ state: { discount } })} >PROCESS TO CHECKOUT</button>

@@ -57,11 +57,14 @@
     flex-shrink: 0;
 }
 
-.explore-menu-list-item img{
-    width: 7.5vw;
-    min-width: 80px;
+.explore-menu-list-item img {
+    width: 7.5vw;            /* Chiều rộng tương đối theo viewport width */
+    height: 7.5vw;           /* Chiều cao bằng chiều rộng để tạo hình vuông */
+    min-width: 80px;         /* Đảm bảo kích thước tối thiểu */
+    min-height: 80px;        /* Đảm bảo chiều cao tối thiểu */
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: 50%;      /* Làm ảnh thành hình tròn */
+    object-fit: cover;       /* Cắt ảnh phù hợp mà không méo */
     transition: all 0.2s ease;
 }
 

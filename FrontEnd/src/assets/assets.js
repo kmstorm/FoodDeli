@@ -90,27 +90,27 @@ export const menu_list = [
         menu_image: menu_1
     },
     {
-        menu_name: "Rolls",
+        menu_name: "Soups",
         menu_image: menu_2
     },
     {
-        menu_name: "Deserts",
+        menu_name: "Sweets",
         menu_image: menu_3
     },
     {
-        menu_name: "Sandwich",
+        menu_name: "Breads",
         menu_image: menu_4
     },
     {
-        menu_name: "Cake",
+        menu_name: "Fried",
         menu_image: menu_5
     },
     {
-        menu_name: "Pure Veg",
+        menu_name: "Rices",
         menu_image: menu_6
     },
     {
-        menu_name: "Pasta",
+        menu_name: "Beverages",
         menu_image: menu_7
     },
     {

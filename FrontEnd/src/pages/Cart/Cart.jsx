@@ -15,7 +15,7 @@ export const Cart = () => {
 
   const discountCodes = [
     { code: "SALE10", type: "percentage", value: 10 },  // Giảm 10%
-    { code: "SAVE50", type: "fixed", value: 50 }       // Giảm 50 đơn vị tiền tệ
+    { code: "Freeship", type: "fixed", value: 15000 }       // Freeship
   ]; 
   
   // Hàm xử lý khi áp dụng mã giảm giá

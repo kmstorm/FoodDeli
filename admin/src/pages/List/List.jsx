@@ -51,7 +51,7 @@ useEffect(()=>{
               <img src={item.image} alt="" />
               <p>{item.name}</p>
               <p>{item.category || "N/A"}</p> {/* Hiển thị N/A nếu thiếu category */}
-              <p>${item.price}</p>
+              <p>{item.price} VND</p>
               <p onClick={()=>removeFood(item._id)} className='cursor'>X</p>
             </div>
           )

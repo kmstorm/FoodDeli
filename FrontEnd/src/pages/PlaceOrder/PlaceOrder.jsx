@@ -38,7 +38,7 @@ const PlaceOrder = () => {
     const orderData = {
       address: deliveryInfo,
       items: orderItems,
-      amount: getTotalCartAmount() + 2, 
+      amount: getTotalCartAmount() + 15000, 
     };
 
     try {
@@ -159,12 +159,12 @@ const PlaceOrder = () => {
               <hr />
               <div className="cart-total-details">
                 <p>Delivery Fee</p>
-                <p>$2</p>
+                <p>$15000</p>
               </div>
               <hr />
               <div className="cart-total-details">
                 <b>Total</b>
-                <b>${getTotalCartAmount() + 2}</b>
+                <b>${getTotalCartAmount() + 15000}</b>
               </div>
             </div>
             <button type="submit">PROCESS TO PAYMENT</button>

@@ -53,12 +53,12 @@ export const Cart = () => {
             <hr />
             <div className="cart-total-details">
               <p>Delivery Fee</p>
-              <p>${getTotalCartAmount() > 0 ? 2 : 0}</p>
+              <p>${getTotalCartAmount() > 0 ? 15000 : 0}</p>
             </div>
             <hr />
             <div className="cart-total-details">
               <b>Total</b>
-              <b>${ getTotalCartAmount() > 0 ? getTotalCartAmount() + 2 : 0}</b>
+              <b>${ getTotalCartAmount() > 0 ? getTotalCartAmount() + 15000 : 0}</b>
             </div>
           </div>
             <button onClick={() => navigate("/order")} >PROCESS TO CHECKOUT</button>

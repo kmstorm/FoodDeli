@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
 
-  const url = "http://localhost:3000"
+  const url = "https://fooddeli.onrender.com"
 
   return (
     <div>

@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import "./PlaceOrder.css";
 import { StoreContext } from "../../context/StoreContext.jsx";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 
 const PlaceOrder = () => {
@@ -18,6 +18,8 @@ const PlaceOrder = () => {
     country: "",
     phone: "",
   });
+  const location = useLocation();
+  const [discount, setDiscount] = useState(location.state?.discount || 0);
   const navigate = useNavigate();
 
   const handleInputChange = (event) => {
@@ -38,11 +40,12 @@ const PlaceOrder = () => {
     const orderData = {
       address: deliveryInfo,
       items: orderItems,
-      amount: getTotalCartAmount() + 2, 
+      amount: getTotalCartAmount() + 15000 - discount,
+      discount, 
     };
 
     try {
-      let response = await axios.post(url + "/api/order/place", orderData, {headers: {token}});
+      let response = await axios.post(url + "/api/order/place", orderData, { headers: { token } });
 
       if (response.data.success) {
         const { paymentUrl } = response.data;
@@ -157,14 +160,23 @@ const PlaceOrder = () => {
                 <p>${getTotalCartAmount()}</p>
               </div>
               <hr />
+              {discount > 0 && (
+                <>
+                  <div className="cart-total-details">
+                    <p>Discount</p>
+                    <p>-${discount}</p>
+                  </div>
+                  <hr />
+                </>
+              )}
               <div className="cart-total-details">
                 <p>Delivery Fee</p>
-                <p>$2</p>
+                <p>$15000</p>
               </div>
               <hr />
               <div className="cart-total-details">
                 <b>Total</b>
-                <b>${getTotalCartAmount() + 2}</b>
+                <b>${getTotalCartAmount() + 15000-discount}</b>
               </div>
             </div>
             <button type="submit">PROCESS TO PAYMENT</button>

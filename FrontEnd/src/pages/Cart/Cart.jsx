@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import './Cart.css'
 import { StoreContext } from '../../context/StoreContext.jsx'
 import { useNavigate } from "react-router-dom"
@@ -8,6 +8,36 @@ export const Cart = () => {
   const { cartItems, food_list, removeFromCart, getTotalCartAmount,url } = useContext(StoreContext)
 
   const navigate = useNavigate();
+
+  // State quản lý mã giảm giá
+  const [promoCode, setPromoCode] = useState("");
+  const [discount, setDiscount] = useState(0); // Giá trị giảm giá
+
+  const discountCodes = [
+    { code: "SALE10", type: "percentage", value: 10 },  // Giảm 10%
+    { code: "Freeship", type: "fixed", value: 15000 }       // Freeship
+  ]; 
+  
+  // Hàm xử lý khi áp dụng mã giảm giá
+  const handleApplyPromo = () => {
+    const discountCode = discountCodes.find((d) => d.code === promoCode);
+
+    if (discountCode) {
+      if (discountCode.type === "percentage") {
+        const discountValue = (getTotalCartAmount() * discountCode.value) / 100;
+        setDiscount(discountValue);
+      } else if (discountCode.type === "fixed") {
+        setDiscount(discountCode.value);
+      }
+      alert("Promo code applied successfully!");
+    } else {
+      alert("Invalid promo code.");
+      setDiscount(0);
+    }
+  };
+
+  // Tính tổng giá trị sau khi giảm giá
+  const totalAfterDiscount = getTotalCartAmount() - discount + (getTotalCartAmount() > 0 ? 15000 : 0);
 
   return (
     <div className='cart'>
@@ -36,8 +66,7 @@ export const Cart = () => {
               </div>
               <hr />
             </div>
-            
-          )
+          );
         }
       })}
       </div>
@@ -53,28 +82,42 @@ export const Cart = () => {
             <hr />
             <div className="cart-total-details">
               <p>Delivery Fee</p>
-              <p>${getTotalCartAmount() > 0 ? 2 : 0}</p>
+              <p>${getTotalCartAmount() > 0 ? 15000 : 0}</p>
             </div>
+            {discount > 0 && (
+              <>
+                <hr />
+                <div className="cart-total-details">
+                  <p>Discount</p>
+                  <p>-${discount}</p>
+                </div>
+              </>
+            )}
             <hr />
             <div className="cart-total-details">
               <b>Total</b>
-              <b>${ getTotalCartAmount() > 0 ? getTotalCartAmount() + 2 : 0}</b>
+              <b>${totalAfterDiscount > 0 ? totalAfterDiscount : 0}</b>
             </div>
           </div>
-            <button onClick={() => navigate("/order")} >PROCESS TO CHECKOUT</button>
+          <button onClick={() => navigate("/order",{ state: { discount } })} >PROCESS TO CHECKOUT</button>
         </div>
         <div className="cart-promocode">
           <div>
             <p>If you have a promo code, Enter it here</p>
             <div className="cart-promocode-input">
-              <input type="text" placeholder='Promo Code' />
-              <button>Submit</button>
+              <input 
+                type="text" 
+                placeholder='Promo Code' 
+                value={promoCode}
+                onChange={(e) => setPromoCode(e.target.value)}
+              />
+              <button onClick={handleApplyPromo}>Submit</button>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Cart

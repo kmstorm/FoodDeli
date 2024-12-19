@@ -40,7 +40,7 @@ const PlaceOrder = () => {
     const orderData = {
       address: deliveryInfo,
       items: orderItems,
-      amount: getTotalCartAmount() + 2 - discount, // Tổng sau giảm giá
+      amount: getTotalCartAmount() + 15000 - discount, // Tổng sau giảm giá
       discount, // Thông tin giảm giá
     };
 
@@ -171,12 +171,12 @@ const PlaceOrder = () => {
               )}
               <div className="cart-total-details">
                 <p>Delivery Fee</p>
-                <p>$2</p>
+                <p>$15000</p>
               </div>
               <hr />
               <div className="cart-total-details">
                 <b>Total</b>
-                <b>${getTotalCartAmount() + 2 - discount}</b>
+                <b>${getTotalCartAmount() + 2}</b>
               </div>
             </div>
             <button type="submit">PROCESS TO PAYMENT</button>

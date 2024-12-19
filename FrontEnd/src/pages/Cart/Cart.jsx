@@ -96,7 +96,7 @@ export const Cart = () => {
             <hr />
             <div className="cart-total-details">
               <b>Total</b>
-              <b>${totalAfterDiscount > 0 ? totalAfterDiscount.toFixed(2) : 0}</b>
+              <b>${totalAfterDiscount > 0 ? totalAfterDiscount.toFixed(2) + 15000 : 0}</b>
             </div>
           </div>
           <button onClick={() => navigate("/order")} >PROCESS TO CHECKOUT</button>

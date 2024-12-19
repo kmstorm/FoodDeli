@@ -26,7 +26,7 @@ export const Navbar = ({ setShowLogin }) => {
     }
   return (
     <div className="navbar">
-        <Link to="/"><img src={assets.logo} alt="" /></Link> 
+        <Link to="/"><img className="navbar-logo" src={assets.logo_icon} alt="" /></Link> 
         <ul className="navbar-menu">
             <Link to="/" onClick={() => { setMenu("Home"); scrollToSection("home"); }} className={menu==="Home"?"active":""}>Home</Link>
             <Link to="#explore" onClick={() => { setMenu("Menu"); scrollToSection("explore"); }} className={menu==="Menu"?"active":""}>Menu</Link>

@@ -19,7 +19,7 @@ const PlaceOrder = () => {
     phone: "",
   });
   const location = useLocation();
-  const [discount, setDiscount] = useState(location.state?.discount || 0); // Nhận giảm giá
+  const [discount, setDiscount] = useState(location.state?.discount || 0);
   const navigate = useNavigate();
 
   const handleInputChange = (event) => {
@@ -40,8 +40,8 @@ const PlaceOrder = () => {
     const orderData = {
       address: deliveryInfo,
       items: orderItems,
-      amount: getTotalCartAmount() + 15000 - discount, // Tổng sau giảm giá
-      discount, // Thông tin giảm giá
+      amount: getTotalCartAmount() + 15000 - discount,
+      discount, 
     };
 
     try {
@@ -164,7 +164,7 @@ const PlaceOrder = () => {
                 <>
                   <div className="cart-total-details">
                     <p>Discount</p>
-                    <p>-${discount.toFixed(2)}</p>
+                    <p>-${discount}</p>
                   </div>
                   <hr />
                 </>
@@ -176,7 +176,7 @@ const PlaceOrder = () => {
               <hr />
               <div className="cart-total-details">
                 <b>Total</b>
-                <b>${getTotalCartAmount() + 2}</b>
+                <b>${getTotalCartAmount() + 15000-discount}</b>
               </div>
             </div>
             <button type="submit">PROCESS TO PAYMENT</button>

@@ -37,7 +37,7 @@ export const Cart = () => {
   };
 
   // Tính tổng giá trị sau khi giảm giá
-  const totalAfterDiscount = getTotalCartAmount() - discount + (getTotalCartAmount() > 0 ? 2 : 0);
+  const totalAfterDiscount = getTotalCartAmount() - discount + (getTotalCartAmount() > 0 ? 15000 : 0);
 
   return (
     <div className='cart'>
@@ -82,24 +82,24 @@ export const Cart = () => {
             <hr />
             <div className="cart-total-details">
               <p>Delivery Fee</p>
-              <p>${getTotalCartAmount() > 0 ? 2 : 0}</p>
+              <p>${getTotalCartAmount() > 0 ? 15000 : 0}</p>
             </div>
             {discount > 0 && (
               <>
                 <hr />
                 <div className="cart-total-details">
                   <p>Discount</p>
-                  <p>-${discount.toFixed(2)}</p>
+                  <p>-${discount}</p>
                 </div>
               </>
             )}
             <hr />
             <div className="cart-total-details">
               <b>Total</b>
-              <b>${totalAfterDiscount > 0 ? totalAfterDiscount.toFixed(2) + 15000 : 0}</b>
+              <b>${totalAfterDiscount > 0 ? totalAfterDiscount : 0}</b>
             </div>
           </div>
-          <button onClick={() => navigate("/order")} >PROCESS TO CHECKOUT</button>
+          <button onClick={() => navigate("/order",{ state: { discount } })} >PROCESS TO CHECKOUT</button>
         </div>
         <div className="cart-promocode">
           <div>

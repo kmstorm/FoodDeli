@@ -50,7 +50,7 @@ const LoginPopup = ({ setShowLogin }) => {
             // Kiểm tra nếu tài khoản là admin@admin.com và mật khẩu là admin
             if (data.email === "admin@admin.com" && data.password === "admin123") {
                 // Chuyển hướng đến trang admin
-                window.location.href = "http://localhost:5173/"; // Thay đổi URL theo trang admin của bạn
+                window.location.href = "https://admin-fooddeli.vercel.app/"; // Thay đổi URL theo trang admin của bạn
             }
         } else {
             setErrorMessage(response.data.message);

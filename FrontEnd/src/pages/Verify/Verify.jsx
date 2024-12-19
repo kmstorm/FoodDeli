@@ -10,26 +10,25 @@ const Verify = () => {
     const success = searchParams.get("success");
     const orderId = searchParams.get("orderId");
     const { url } = useContext(StoreContext);
-    const navigate = useNavigate();
 
     const verifyOrder = async () => {
         try {
             const response = await axios.post(url + "/api/order/verify", { success, orderId });
             if (response.data.success) {
-                navigate("/"); 
+                window.location.href = "https://client-fooddeli.vercel.app/"; 
             } else {
-                navigate("/"); // Điều hướng nếu thanh toán không thành công
+                window.location.href = "https://client-fooddeli.vercel.app/"; 
             }
         } catch (error) {
             console.error("Error verifying order:", error);
-            navigate("/"); // Điều hướng nếu có lỗi xảy ra
+            window.location.href = "https://client-fooddeli.vercel.app/"; 
         }
     };
 
     // Gọi hàm xác minh khi component được render
     useEffect(() => {
         verifyOrder();
-    }, [success, orderId]); // Chạy lại khi tham số `success` hoặc `orderId` thay đổi
+    }, [success, orderId]); 
 
     return (
         <div className='verify'>
@@ -38,5 +37,6 @@ const Verify = () => {
         </div>
     );
 };
+
 
 export default Verify;

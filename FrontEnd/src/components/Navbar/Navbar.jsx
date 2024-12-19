@@ -40,7 +40,7 @@ export const Navbar = ({ setShowLogin }) => {
                 <div className={getTotalCartAmount()=== 0 ? "":"dot"}>
                 </div>
             </div> 
-            {!token ? <button onClick={() => setShowLogin(true)}>Sign Up</button> :
+            {!token ? <button onClick={() => setShowLogin(true)}>Login</button> :
                 <div className="navbar-profile">
                     <img src={assets.profile_icon} alt="Profile Icon" />
                     <ul className="navbar-profile-dropdown">

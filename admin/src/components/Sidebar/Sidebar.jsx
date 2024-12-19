@@ -10,7 +10,7 @@ const Sidebar = () => {
     localStorage.removeItem("token");
 
     // Chuyển hướng đến trang khác (ví dụ: trang login)
-    window.location.href = "http://localhost:8097/";  // Đổi URL theo yêu cầu
+    window.location.href = "https://client-fooddeli.vercel.app/";  // Đổi URL theo yêu cầu
   };
 
   return (

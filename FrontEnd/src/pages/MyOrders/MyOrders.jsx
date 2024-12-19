@@ -55,7 +55,7 @@ const MyOrders = () => {
                                 </span>
                             ))}
                         </p>
-                        <p>${order.amount}.00</p>
+                        <p>{order.amount} VND</p>
                         <p>Payment: {order.payment ? 'Successful' : 'Failed'}</p>
                         <p>
                             <span>&#x25cf;</span> <b>{order.status}</b>
